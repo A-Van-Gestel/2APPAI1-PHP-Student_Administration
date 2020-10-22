@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentCourse extends Model
 {
-    public function students()
+    public function student()
     {
-        return $this->hasMany('App\Students');   // a studentCourse has many students
+        return $this->hasMany('App\Students');   // a studentCourse belongs to a student
     }
 
     public function course()
