@@ -7,7 +7,10 @@
         <div class="collapse navbar-collapse" id="collapsNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses">Courses</a>
                 </li>
             </ul>
         </div>

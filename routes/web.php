@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Admin\StudentController@index');
-
+Route::get('courses', 'CourseController@index');
+Route::get('courses/{id}', 'CourseController@show');
