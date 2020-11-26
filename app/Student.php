@@ -13,6 +13,6 @@ class Student extends Model
 
     public function studentcourses()
     {
-        return $this->hasMany('App\StudentCourses');   // a student has many studentCourses
+        return $this->hasMany('App\StudentCourse');   // a student has many studentCourses
     }
 }
