@@ -60,6 +60,16 @@ class CourseController extends Controller
     // Detail Page: http://student_administration.test/courses/{id} or http://localhost:3000/courses/{id}
     public function show($id)
     {
-        return view('Course.show', ['id' => $id]);  // Send $id to the view
+        // Make get record by ID
+        $course = Course::with('programme')
+            ->with('studentcourses')
+            ->with('studentcourses.student')
+            ->findOrFail($id);
+        // dd($course);
+
+        // Send to page
+        $result = compact('course');
+        Json::dump($result);                    // open http://vinyl_shop.test/shop/{{ ID }}?json
+        return view('Course.show', $result);  // Pass $result to the view
     }
 }

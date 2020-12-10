@@ -20,6 +20,9 @@ namespace App{
  * @property string $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Programme $programme
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\StudentCourse[] $studentcourses
+ * @property-read int|null $studentcourses_count
  * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course query()
@@ -41,6 +44,10 @@ namespace App{
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $courses
+ * @property-read int|null $courses_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
+ * @property-read int|null $students_count
  * @method static \Illuminate\Database\Eloquent\Builder|Programme newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Programme newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Programme query()
@@ -63,6 +70,9 @@ namespace App{
  * @property string $last_name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Programme $programme
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\StudentCourse[] $studentcourses
+ * @property-read int|null $studentcourses_count
  * @method static \Illuminate\Database\Eloquent\Builder|Student newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Student query()
@@ -87,6 +97,8 @@ namespace App{
  * @property int $semester
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Course $course
+ * @property-read \App\Student $student
  * @method static \Illuminate\Database\Eloquent\Builder|StudentCourse newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|StudentCourse newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|StudentCourse query()
