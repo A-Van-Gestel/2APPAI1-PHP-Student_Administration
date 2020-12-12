@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['register' => false]);
+Route::get('logout', 'Auth\LoginController@logout');
+Route::redirect('home', '/');
 Route::get('/', 'Admin\StudentController@index');
 Route::get('courses', 'CourseController@index');
 Route::get('courses/{id}', 'CourseController@show');
