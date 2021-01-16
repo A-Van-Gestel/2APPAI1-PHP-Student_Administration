@@ -19,3 +19,10 @@ Route::redirect('home', '/');
 Route::get('/', 'Admin\StudentController@index');
 Route::get('courses', 'CourseController@index');
 Route::get('courses/{id}', 'CourseController@show');
+
+// New version with prefix and group
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::redirect('/', '/admin/courses');
+    Route::resource('programmes', 'Admin\ProgrammeController');
+//    Route::get('programmes/{id}', 'CourseController@show');
+});
