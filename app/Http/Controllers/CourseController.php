@@ -72,4 +72,21 @@ class CourseController extends Controller
         Json::dump($result);                    // open http://vinyl_shop.test/shop/{{ ID }}?json
         return view('Course.show', $result);  // Pass $result to the view
     }
+
+    public function add(Request $request)
+    {
+        $this->validate($request,[
+            'name' => 'required|min:3|unique:courses,name',
+            'description' => 'required|min:3',
+            'programme_id' => 'required'
+        ]);
+
+        $course = new course();
+        $course->name = $request->name;
+        $course->description = $request->description;
+        $course->programme_id = $request->programme_id;
+        $course->save();
+
+        return back();
+    }
 }
